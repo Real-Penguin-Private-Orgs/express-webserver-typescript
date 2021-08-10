@@ -1,5 +1,7 @@
 import app from './app';
-let port: number  = 8080;
+import * as dotenv from 'dotenv';
+dotenv.config();
+let port: number  = 8080 || process.env.PORT;
 
 app.listen(port, () => {
     console.log(`Connected to port ${port}`);
